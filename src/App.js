@@ -1,15 +1,28 @@
-import Header from './Header';
 import Home from './Home';
+import About from './About';
+import Navbar from './Navbar';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
   const title = 'Welcome to the Mandarin Grader Supplemental App';
   return (
     <div className="App">
+      <Router>
       <h2>{title}</h2>
-     <Header />
+     <Navbar />
      <div className="content">
-       <Home />
+  
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+
+      </Switch>
      </div>
+     </Router>
     </div>
    
   );
